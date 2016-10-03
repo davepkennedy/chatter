@@ -13,3 +13,8 @@ Each socket will be processed one at a time, so there should be very little mult
 
 The job of each iteration should be very small, so the processing each socket in this way should take very little time.
 If there were more work to be done for each request, then we would need to use threads (and use a more complete server library eg. Netty)
+
+Unit tests:
+Unit tests aren't provided for classes requiring network connectivity (NIOChatServer, NIOChatClient)
+Ideally these would be tested where network connetivity can be guaranteed, so more appropriately in integration tests.
+These classes should be almost entirely devoted to network routines and anything not directly related to NIO should be tested in another class.
